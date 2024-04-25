@@ -45,5 +45,11 @@ namespace golum.Controllers
             var result = await _login.UpdatePhone(login);
             return Ok(result);
         }
+        [HttpDelete("DeleteLogin")]
+        public async Task<IActionResult> DeleteLogin(string UserID)
+        {
+            var result = await _login.DeleteLogin(UserID);
+            return Ok(result);
+        }
     }
 }

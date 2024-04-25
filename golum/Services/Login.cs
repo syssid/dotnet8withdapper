@@ -43,5 +43,13 @@ namespace golum.Services
                 await _dbService.EditData("UpdateLoginPhone", parameters);
             return login;
         }
+        public async Task<int> DeleteLogin(String UserID)
+        {
+            var parameters = new { UserID};
+            var result =
+                await _dbService.EditData("DeleteLogin", parameters);
+
+            return result;
+        }
     }
 }

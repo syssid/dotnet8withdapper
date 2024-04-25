@@ -8,6 +8,6 @@
         Task<Models.Login> UpdatePassword(Models.Login login);
         Task<Models.Login> UpdatePhone(Models.Login login);
 
-        //   Task<bool> DeleteLogin(string UserID);
+        Task<int> DeleteLogin(string UserID);
     }
 }
