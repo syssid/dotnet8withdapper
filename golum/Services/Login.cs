@@ -29,5 +29,27 @@ namespace golum.Services
                 await _dbService.EditData("CreateLogin", parameters);
             return true;
         }
+        public async Task<Models.Login> UpdatePassword(Models.Login login)
+        {
+            var parameters = new { login.UserID, login.Password };
+            var result =
+                await _dbService.EditData("UpdateLoginPassword", parameters);
+            return login;
+        }
+        public async Task<Models.Login> UpdatePhone(Models.Login login)
+        {
+            var parameters = new { login.UserID, login.Phone };
+            var result =
+                await _dbService.EditData("UpdateLoginPhone", parameters);
+            return login;
+        }
+        public async Task<int> DeleteLogin(String UserID)
+        {
+            var parameters = new { UserID};
+            var result =
+                await _dbService.EditData("DeleteLogin", parameters);
+
+            return result;
+        }
     }
 }

@@ -5,7 +5,9 @@
         Task<Models.Login> GetLogin(string UserID, string Password);
         Task<List<Models.Login>> GetListLogin();
         Task<bool> CreateLogin(Models.Login employee);
-      //  Task<Models.Login> UpdateLogin(Models.Login login);
-     //   Task<bool> DeleteLogin(string UserID);
+        Task<Models.Login> UpdatePassword(Models.Login login);
+        Task<Models.Login> UpdatePhone(Models.Login login);
+
+        Task<int> DeleteLogin(string UserID);
     }
 }

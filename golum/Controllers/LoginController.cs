@@ -33,5 +33,23 @@ namespace golum.Controllers
             var result = await _login.GetListLogin();
             return Ok(result);
         }
+        [HttpPut("UpdatePassword")]
+        public async Task<IActionResult> UpdatePassword([FromBody] Models.Login login)
+        {
+            var result = await _login.UpdatePassword(login);
+            return Ok(result);
+        }
+        [HttpPut("UpdatePhone")]
+        public async Task<IActionResult> UpdatePhone([FromBody] Models.Login login)
+        {
+            var result = await _login.UpdatePhone(login);
+            return Ok(result);
+        }
+        [HttpDelete("DeleteLogin")]
+        public async Task<IActionResult> DeleteLogin(string UserID)
+        {
+            var result = await _login.DeleteLogin(UserID);
+            return Ok(result);
+        }
     }
 }
